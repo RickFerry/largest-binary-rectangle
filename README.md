@@ -74,6 +74,14 @@ public class RectangleMatrix {
 
         return maxArea;
     }
+}
+
+import com.example.utils.RectangleMatrix;
+
+import java.util.logging.Logger;
+
+public class Application {
+    private static final Logger logger = Logger.getLogger(Application.class.getName());
 
     public static void main(String[] args) {
         char[][] matrix = {
@@ -84,7 +92,7 @@ public class RectangleMatrix {
         };
 
         RectangleMatrix rectangleMatrix = new RectangleMatrix(matrix);
-        System.out.println(rectangleMatrix.maximalRectangle());
+        logger.info("Maximal rectangle area: " + rectangleMatrix.maximalRectangle());
     }
 }
 ```
