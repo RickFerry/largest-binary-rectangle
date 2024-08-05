@@ -1,4 +1,4 @@
-package com.example;
+package com.example.utils;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -28,7 +28,6 @@ public class RectangleMatrix {
             }
             maxArea = Math.max(maxArea, largestRectangleArea(heights));
         }
-
         return maxArea;
     }
 
@@ -46,19 +45,6 @@ public class RectangleMatrix {
             }
             stack.push(i);
         }
-
         return maxArea;
-    }
-
-    public static void main(String[] args) {
-        char[][] matrix = {
-                {'1', '0', '1', '0', '0'},
-                {'1', '0', '1', '1', '1'},
-                {'1', '1', '1', '1', '1'},
-                {'1', '0', '0', '1', '0'}
-        };
-
-        RectangleMatrix rectangleMatrix = new RectangleMatrix(matrix);
-        System.out.println(rectangleMatrix.maximalRectangle());
     }
 }
