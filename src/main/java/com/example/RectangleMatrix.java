@@ -2,9 +2,15 @@ package com.example;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-public class MaximalRectangle {
 
-    public static int maximalRectangle(char[][] matrix) {
+public class RectangleMatrix {
+    private final char[][] matrix;
+
+    public RectangleMatrix(char[][] matrix) {
+        this.matrix = matrix;
+    }
+
+    public int maximalRectangle() {
         if (matrix.length == 0) {
             return 0;
         }
@@ -26,7 +32,7 @@ public class MaximalRectangle {
         return maxArea;
     }
 
-    private static int largestRectangleArea(int[] heights) {
+    private int largestRectangleArea(int[] heights) {
         Deque<Integer> stack = new ArrayDeque<>();
         int maxArea = 0;
         int[] h = new int[heights.length + 1];
@@ -52,6 +58,7 @@ public class MaximalRectangle {
                 {'1', '0', '0', '1', '0'}
         };
 
-        System.out.println(maximalRectangle(matrix));  // Saída: 6
+        RectangleMatrix rectangleMatrix = new RectangleMatrix(matrix);
+        System.out.println(rectangleMatrix.maximalRectangle());
     }
 }
